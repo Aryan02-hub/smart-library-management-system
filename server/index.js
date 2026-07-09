@@ -14,7 +14,17 @@ const issueRoutes = require("./routes/issueRoutes");
 
 const app = express();
 
-app.use(cors());
+const cors = require("cors");
+
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "https://smart-library-management-system-chi.vercel.app"
+    ],
+    credentials: true,
+  })
+);
 app.use(express.json());
 console.log(process.env.MONGO_URI);
 
