@@ -26,11 +26,10 @@ function StudentDashboard() {
   const [search, setSearch] = useState("");
 
   useEffect(() => {
-
-    fetchBooks();
-    fetchIssuedBooks();
-
-  }, []);
+  fetchBooks();
+  fetchIssuedBooks();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, []);
 
   // FETCH BOOKS
 
