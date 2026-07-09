@@ -39,7 +39,7 @@ function StudentDashboard() {
     try {
 
       const res = await axios.get(
-        "http://localhost:5000/api/books"
+        "https://smart-library-management-system.onrender.com/api/books"
       );
 
       setBooks(res.data);
@@ -59,7 +59,7 @@ function StudentDashboard() {
     try {
 
       const res = await axios.get(
-        `http://localhost:5000/api/issues/${user.email}`
+        `https://smart-library-management-system.onrender.com/api/issues/${user.email}`
       );
 
       setIssuedBooks(res.data);
@@ -79,7 +79,7 @@ function StudentDashboard() {
     try {
 
       const res = await axios.post(
-        "http://localhost:5000/api/issues/issue",
+        "https://smart-library-management-system.onrender.com/api/issues/issue",
         {
           studentEmail: user.email,
           bookTitle: title
@@ -105,7 +105,7 @@ function StudentDashboard() {
     try {
 
       const res = await axios.put(
-        `http://localhost:5000/api/issues/return/${id}`
+        `https://smart-library-management-system.onrender.com/api/issues/return/${id}`
       );
 
       alert(

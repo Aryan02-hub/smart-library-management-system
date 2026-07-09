@@ -59,7 +59,7 @@ function StudentAuth() {
     try {
 
       const res = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "https://smart-library-management-system.onrender.com/api/auth/login",
         {
           ...loginData,
           role: "student"
@@ -92,7 +92,7 @@ function StudentAuth() {
     try {
 
       const res = await axios.post(
-        "http://localhost:5000/api/auth/register",
+        "https://smart-library-management-system.onrender.com/api/auth/register",
         registerData
       );
 
