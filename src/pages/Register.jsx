@@ -27,7 +27,7 @@ function Register() {
     try {
 
       const res = await axios.post(
-        "https://smart-library-management-system.onrender.com/api/auth/register",
+        "https://smart-library-management-system-h695.onrender.com/api/auth/register",
         formData
       );
 

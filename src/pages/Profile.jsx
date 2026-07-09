@@ -33,7 +33,7 @@ function Profile() {
     try {
 
       const res = await axios.put(
-        "https://smart-library-management-system.onrender.com/api/auth/update-profile",
+        "https://smart-library-management-system-h695.onrender.com/api/auth/update-profile",
         formData
       );
 

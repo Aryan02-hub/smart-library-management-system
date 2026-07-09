@@ -75,7 +75,7 @@ function AuthPage() {
       }
 
       const res = await axios.post(
-        "https://smart-library-management-system.onrender.com/api/auth/login",
+        "https://smart-library-management-system-h695.onrender.com/api/auth/login",
         {
           email: loginData.email,
           password: loginData.password,
@@ -117,7 +117,7 @@ function AuthPage() {
     try {
 
       const res = await axios.post(
-        "https://smart-library-management-system.onrender.com/api/auth/register",
+        "https://smart-library-management-system-h695.onrender.com/api/auth/register",
         registerData
       );
 

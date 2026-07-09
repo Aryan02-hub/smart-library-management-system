@@ -38,7 +38,7 @@ function StudentDashboard() {
     try {
 
       const res = await axios.get(
-        "https://smart-library-management-system.onrender.com/api/books"
+        "https://smart-library-management-system-h695.onrender.com/api/books"
       );
 
       setBooks(res.data);
@@ -58,7 +58,7 @@ function StudentDashboard() {
     try {
 
       const res = await axios.get(
-        `https://smart-library-management-system.onrender.com/api/issues/${user.email}`
+        `https://smart-library-management-system-h695.onrender.com/api/issues/${user.email}`
       );
 
       setIssuedBooks(res.data);
@@ -78,7 +78,7 @@ function StudentDashboard() {
     try {
 
       const res = await axios.post(
-        "https://smart-library-management-system.onrender.com/api/issues/issue",
+        "https://smart-library-management-system-h695.onrender.com/api/issues/issue",
         {
           studentEmail: user.email,
           bookTitle: title
@@ -104,7 +104,7 @@ function StudentDashboard() {
     try {
 
       const res = await axios.put(
-        `https://smart-library-management-system.onrender.com/api/issues/return/${id}`
+        `https://smart-library-management-system-h695.onrender.com/api/issues/return/${id}`
       );
 
       alert(

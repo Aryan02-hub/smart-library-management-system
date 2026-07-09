@@ -36,7 +36,7 @@ function AdminDashboard() {
     try {
 
       const res = await axios.get(
-        "https://smart-library-management-system.onrender.com/api/books"
+        "https://smart-library-management-system-h695.onrender.com/api/books"
       );
 
       setBooks(res.data);
@@ -56,7 +56,7 @@ function AdminDashboard() {
     try {
 
       const res = await axios.get(
-        "https://smart-library-management-system.onrender.com/api/admin/stats"
+        "https://smart-library-management-system-h695.onrender.com/api/admin/stats"
       );
 
       setStats(res.data);
@@ -87,7 +87,7 @@ function AdminDashboard() {
     try {
 
       const res = await axios.post(
-        "https://smart-library-management-system.onrender.com/api/books/add",
+        "https://smart-library-management-system-h695.onrender.com/api/books/add",
         bookData
       );
 
@@ -118,7 +118,7 @@ function AdminDashboard() {
     try {
 
       const res = await axios.delete(
-        `https://smart-library-management-system.onrender.com/api/books/delete/${id}`
+        `https://smart-library-management-system-h695.onrender.com/api/books/delete/${id}`
       );
 
       alert(res.data.message);
