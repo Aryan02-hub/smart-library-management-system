@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    background: #020617;
+}
+
+.role-container{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    background: linear-gradient(
+        135deg,
+        #020617,
+        #0f172a,
+        #1e293b
+    );
+    overflow: hidden;
+}
+
+/* LEFT SECTION */
+
+.left-section{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.left-section::before{
+    content: '';
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+    filter: blur(90px);
+}
+
+.saraswati-img{
+    width: 480px;
+    z-index: 2;
+    animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+
+    0%{
+        transform: translateY(0px);
+    }
+
+    50%{
+        transform: translateY(-15px);
+    }
+
+    100%{
+        transform: translateY(0px);
+    }
+
+}
+
+/* RIGHT SECTION */
+
+.right-section{
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+.role-box{
+    width: 100%;
+    max-width: 520px;
+    padding: 50px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    backdrop-filter: blur(20px);
+    border-radius: 30px;
+    color: white;
+    box-shadow: 0 0 40px rgba(0,0,0,0.35);
+}
+
+.role-box h1{
+    font-size: 52px;
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.shlok{
+    line-height: 2;
+    color: #facc15;
+    margin-bottom: 25px;
+    font-weight: 500;
+}
+
+.description{
+    color: #cbd5e1;
+    line-height: 1.8;
+    margin-bottom: 35px;
+    font-size: 15px;
+}
+
+.role-buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.role-buttons button{
+    padding: 15px;
+    border: none;
+    border-radius: 14px;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.student-btn{
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+    color: white;
+}
+
+.student-btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(37,99,235,0.4);
+}
+
+.admin-btn{
+    background: linear-gradient(
+        135deg,
+        #06b6d4,
+        #0891b2
+    );
+    color: white;
+}
+
+.admin-btn:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(6,182,212,0.4);
+}
+
+/* MOBILE */
+
+@media screen and (max-width: 1000px){
+
+    .role-container{
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+
+    .left-section{
+        min-height: 300px;
+    }
+
+    .saraswati-img{
+        width: 280px;
+    }
+
+    .role-box{
+        padding: 35px;
+    }
+
+    .role-box h1{
+        font-size: 38px;
+    }
+
+}
