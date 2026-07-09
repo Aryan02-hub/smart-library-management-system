@@ -14,43 +14,50 @@ const issueRoutes = require("./routes/issueRoutes");
 
 const app = express();
 
+// CORS
 app.use(
   cors({
     origin: [
       "http://localhost:3000",
-      "https://smart-library-management-system-chi.vercel.app"
+      "https://smart-library-management-system-chi.vercel.app",
     ],
     credentials: true,
   })
 );
-app.use(express.json());
-console.log(process.env.MONGO_URI);
 
+app.use(express.json());
+
+// MongoDB Connection
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("✅ MongoDB Atlas Connected"))
   .catch((err) => console.log(err));
 
+// Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/books", bookRoutes);
 app.use("/api/issues", issueRoutes);
 
 app.get("/api/admin/stats", async (req, res) => {
-  const totalBooks = await Book.countDocuments();
+  try {
+    const totalBooks = await Book.countDocuments();
 
-  const totalStudents = await User.countDocuments({
-    role: "student",
-  });
+    const totalStudents = await User.countDocuments({
+      role: "student",
+    });
 
-  const issuedBooks = await Issue.countDocuments({
-    returned: false,
-  });
+    const issuedBooks = await Issue.countDocuments({
+      returned: false,
+    });
 
-  res.json({
-    totalBooks,
-    totalStudents,
-    issuedBooks,
-  });
+    res.json({
+      totalBooks,
+      totalStudents,
+      issuedBooks,
+    });
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
 });
 
 app.get("/", (req, res) => {
